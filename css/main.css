@@ -1,0 +1,37 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: #F4FBD2;
+	min-height: 100vh;
+	flex-wrap: wrap;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex: 0 100%;
+}
+.selectableDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 200px;
+	background-color: #FDCDBD;
+	height: 200px;
+	flex-wrap: wrap;
+	margin: 5px;
+	box-sizing: content-box;
+	transition: all 0.1s linear;
+}
+
+.selectableDiv:hover {
+	-webkit-box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
+	-moz-box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
+	box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
+	min-height: 205px;
+	min-width: 205px;
+	cursor: pointer;
+
+}
