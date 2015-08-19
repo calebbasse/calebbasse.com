@@ -2,36 +2,137 @@ body {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	background-color: #F4FBD2;
+	background-color: grey;
 	min-height: 100vh;
 	flex-wrap: wrap;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 
-.row {
-	display: flex;
+header {
+	font-size: 2em;
+	color: black;
+}
+
+/*.row {
+    display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	flex: 0 100%;
-}
+}*/
+
 .selectableDiv {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: 0 0 200px;
+	flex: 0 1 100%;
 	background-color: #FDCDBD;
-	height: 200px;
+	height: 150px;
 	flex-wrap: wrap;
-	margin: 5px;
 	box-sizing: content-box;
-	transition: all 0.1s linear;
+	transition: box-shadow 0.1s linear;
 }
 
-.selectableDiv:hover {
-	-webkit-box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
-	-moz-box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
-	box-shadow: 7px 7px 0px -1px rgba(0,0,0,1);
-	min-height: 205px;
-	min-width: 205px;
-	cursor: pointer;
+.dropdownWrapper {
+	overflow: hidden;
+	transition: height 0.4s ease;
+	flex: 0 1 100%;
+}
 
+.dropdownWrapper.ng-hide {
+	display: block!important;
+}
+
+.dropdown {
+	position: relative;
+	padding: 20px;
+	height: 300px;
+	transition: bottom 0.4s ease;
+	background: url("/img/art-header.JPG") 50% /250%;
+}
+
+.dropdownWrapper.ng-hide .dropdown {
+	display: block!important;
+}
+
+/*.selectableDiv:hover {
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.8);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.8);
+	box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.8);
+	cursor: pointer;
+	margin: 5px;
+
+}*/
+
+
+
+@media screen and (max-width: 768px) {
+	.selectableDiv::after {
+		content: "default";
+		color: white;
+		opacity: 0.6;
+		font-size: 2em;
+		align-self: flex-end;
+		right: 10px;
+		bottom: 10px;
+		position: absolute;
+	}
+	#github::after {
+		content: "github";
+		color: red;
+	}
+	#caleb::after {
+		content: "about";
+		color: white;
+	}
+	#art::after {
+		content: "artwork";
+		color: green;
+	}
+	#work::after {
+		content: "computer work";
+		color: brown;
+	}
+	#facebook::after {
+		content: "facebook";
+		color: blue;
+	}
+	#twitter::after {
+		content: "twitter";
+		color: lightblue;
+	}
+	#instagram::after {
+		content: "instagram";
+		color: violet;
+	}
+
+}
+
+#github {
+	background: url("/img/github-circled-alt2.svg") center/350px no-repeat black;
+}
+
+#caleb {
+	background: url("/img/CalebBackground.png") center 10px/auto 100% no-repeat black;
+}
+
+#work {
+	background: url("/img/helpdesk.png") -50px top/300%;
+}
+
+#art {
+	background: url("/img/art-header.JPG") 50% /250%;
+}
+
+#twitter {
+	background: azure;
+}
+
+#facebook {
+	background:chocolate;
+}
+
+#instagram {
+	background: darkblue;
 }
